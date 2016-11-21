@@ -1,1 +1,20 @@
-{{test}}
+<div class="header-section">
+	<div class="header-content text-center">
+		<span>顶部信息展示</span>
+	</div>
+</div>
+<div class="main-section">
+	<div class="left-panel">		
+		<ul class="nav">
+			<li ng-repeat="menu in menus">
+				<a ui-sref="{{menu.state}}"><i class="fa {{menu.classes}}"></i><span>{{menu.name}}</span><span class="menu-expead" ng-if="menu.submenus"><i class="fa fa-angle-down"></i></span></a>
+				<ul class="second-menu" ng-if="menu.submenus">
+					<li ng-repeat="submenu in menu.submenus"><a ui-sref="{{submenu.state}}"><span>{{submenu.name}}</span></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="right-content" ui-view="content"></div>
+</div>

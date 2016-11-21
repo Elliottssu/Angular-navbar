@@ -1,51 +1,77 @@
-.highlight {
-  color: #ff0000;
-}
-.angucomplete-holder {
-    position: relative;
-}
-.angucomplete-holder input{
-  height:28px;
-  border-radius:4px!important;
-}
-.angucomplete-dropdown {
-    border-color: #ececec;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 2px;
-    width: 250px;
-    padding: 6px;
-    cursor: pointer;
-    z-index: 9999;
+.header-section{
+    min-width: 1200px;
+    width: 100%;
     position: absolute;
-    margin-top: -6px;
-    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
 }
-
-.angucomplete-searching {
-    color: #65cea7;
-    font-size: 14px;
+.header-content{
+    position: relative;
+    min-width: 1200px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #F4F6FC;
+    color: #666;
+    z-index: 100;
 }
-
-.angucomplete-description {
-    font-size: 14px;
+.main-section{
+    margin-top:60px;
+    min-width: 1200px;
+    font: 13px/1.5 tahoma,arial,'\5FAE\8F6F\96C5\9ED1',sans-serif;
 }
-
-.angucomplete-row {
-    padding: 5px;
-    color: #000000;
-    margin-bottom: 4px;
-
+/*左侧菜单*/
+.left-panel{
+    width:200px;
+    background-color: #343f51;
+    position:fixed;
+    top:60px;
+    left:0;
+    height:100%
 }
-
-.angucomplete-selected-row, .angucomplete-row:hover {
-    background-color: #65cea7;
-    color: #ffffff;
+.left-panel>ul li{
+    line-height:54px;
 }
-
-.sales-pl-none{
-  min-height: 28px;
+.left-panel li a:hover,.left-panel li a:focus,.left-panel .menu-active{
+    background-color: #2b3442;
+    text-decoration: none;
+    color: #FFC640;
 }
-.lab-select{
-  line-height: 45px
+.left-panel ul li>a{
+    display: block;
+    padding: 0 20px;
+    color: #cfdaec;
+    text-indent: 10px;
+    position: relative;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+}
+.left-panel i{
+    margin-right: 10px
+}
+.menu-expead{
+    right: 24px;
+    position: absolute;
+    line-height: 52px;
+}
+.second-menu{
+    padding:0;
+}
+.second-menu li{
+    line-height:35px!important;
+    margin:0;
+}
+.second-menu li a{
+    padding-left: 54px!important
+}
+/*右侧内容*/
+.right-content{
+    background-color: #ecedf1;
+    position: absolute;
+    left: 200px;
+    right: 0;
+    bottom: 0;
+    top: 60px;
+    overflow: hidden;
 }
