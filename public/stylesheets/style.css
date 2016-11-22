@@ -31,8 +31,9 @@
 }
 .left-panel>ul li{
     line-height:54px;
+    cursor: pointer;
 }
-.left-panel li a:hover,.left-panel li a:focus,.left-panel .menu-active{
+.left-panel li a:hover,.left-panel li a:focus,.left-panel li a.menu-active{
     background-color: #2b3442;
     text-decoration: none;
     color: #FFC640;

@@ -1,62 +1,38 @@
 angular.module('ctrlModule', [])
-	.controller('testCtrl', function ($scope, $http) {
+	.controller('testCtrl', function ($scope, $http, $rootScope) {
 	    $scope.menus =  [
-					      {
-					        "name": "行业统计",
-					        "submenus": null,
-					        "classes": "fa-bar-chart-o",
-					        "state": "test.view1"
-					      },
-					      {
-					        "name": "商品榜",
-					        "submenus": [{"name": "热销榜", "state": "test.view2({type:\"0\",menuName:\"热销榜\"})"}, {
-					          "name": "飙升榜",
-					          "state": "test.view3({type:\"1\",menuName:\"飙升榜\"})"
-					        }],
-					        "classes": "fa-bar-chart-o",
-					        "state": "test.view1"
-					      }, {
-					        "name": "店铺榜",
-					        "submenus": [{"name": "热销榜", "state": "test.view4({type:\"0\",menuName:\"热销榜\"})"}, {
-					          "name": "飙升榜",
-					          "state": "test.view5({type:\"1\",menuName:\"飙升榜\"})"
-					        }],
-					        "classes": "fa-area-chart",
-					        "state": "test.view1"
-					      }, {
-					        "name": "标签榜",
-					        "submenus": [{"name": "热销榜", "state": "test.view1({type:\"0\",menuName:\"热销榜\"})"}, {
-					          "name": "飙升榜",
-					          "state": "test.view2({type:\"0\",menuName:\"飙升榜\"})"
-					        }],
-					        "classes": "fa-indent",
-					        "state": "test.view1"
-					      }, {
-					        "name": "我的关注",
-					        "submenus": [{"name": "商品", "state": "test.view3"}, {
-					          "name": "店铺",
-					          "state": "test.view4"
-					        }, {"name": "标签", "state": "test.view5"}],
-					        "classes": "fa-tasks",
-					        "state": "test.view1"
-					      },
-					      {
-					        "name": "搜索",
-					        "submenus": null,
-					        "classes": "fa-search",
-					        "state": "test.view1"
-					      }
-					    ]
-
-
-			// console.log(nowstate())
-
-
-
-
+	      {
+	        "name": "首页",
+	        "state": "app.home",
+	        "submenus": null,
+	        "classes": ["fa-home"]
+	      },
+	      {
+	        "name": "权限管理",
+	        "state": "app.funcpermission",
+	        "submenus": null,
+	        "classes": ["fa-share-alt"]
+	      }, {
+	        "name": "账号安全",
+	        "submenus": [{"name": "移动设备管理", "state": "app.mdm"}, {"name": "登录日志","state": "app.loginlogs"}],
+	        "classes": ["fa-lock"]
+	      }, {
+	        "name": "企业设置",
+	        "submenus": [{"name": "工作设置", "state":"app.setup"}, {"name": "通讯录隐私设置", "state": "app.addrprivacyconfig"},{"name": "企业信息","state":"app.business"}],
+	        "classes": ["fa-cog"]
+	      },
+	      {
+	        "name": "管理日志",
+	        "submenus": null,
+	        "state": "app.managelogs",
+	        "classes": ["fa-newspaper-o"]
+	      }
+	    ]
+	    
+	    $scope.submenuShow = function(num){
+	    	$scope.isShow = [];
+	    	$scope.isShow[num] = true;
+	    };
 
 	})
-	.controller('test1Ctrl', function ($scope, $http) {
-	    $scope.test="ss"
 
-	})

@@ -7,9 +7,10 @@
 	<div class="left-panel">		
 		<ul class="nav">
 			<li ng-repeat="menu in menus">
-				<a ui-sref="{{menu.state}}"><i class="fa {{menu.classes}}"></i><span>{{menu.name}}</span><span class="menu-expead" ng-if="menu.submenus"><i class="fa fa-angle-down"></i></span></a>
-				<ul class="second-menu" ng-if="menu.submenus">
-					<li ng-repeat="submenu in menu.submenus"><a ui-sref="{{submenu.state}}"><span>{{submenu.name}}</span></a></li>
+				<a ng-if="!menu.submenus" ui-sref="{{menu.state}}" ng-class="{'menu-active':menu.state==currentState}" ng-click="submenuShow($index)"><i class="fa {{menu.classes}}"></i><span>{{menu.name}}</span></a>
+				<a ng-if="menu.submenus" ng-class="{'menu-active':menu.state==currentState}" ng-click="submenuShow($index)"><i class="fa {{menu.classes}}"></i><span>{{menu.name}}</span><span class="menu-expead" ng-if="menu.submenus"><i class="fa" ng-class="{'fa-angle-up':isShow[$index],'fa-angle-down':!isShow[$index]}"></i></span></a>
+				<ul class="second-menu" ng-show="isShow[$index]">
+					<li ng-repeat="submenu in menu.submenus"><a ui-sref="{{submenu.state}}" ng-class="{'menu-active':submenu.state==currentState}"><span>{{submenu.name}}</span></a></li>
 				</ul>
 			</li>
 		</ul>
@@ -18,3 +19,4 @@
 
 	<div class="right-content" ui-view="content"></div>
 </div>
+ <!-- ng-class="{'menu-active':submenu.state=currentState}" -->
