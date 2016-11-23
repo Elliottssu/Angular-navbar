@@ -1,4 +1,4 @@
-angular.module('myApp', ['ui.router','ctrlModule','ngAnimate'])
+angular.module('myApp', ['ui.router','ctrlModule'])
     .config(function ($locationProvider,$urlRouterProvider,$stateProvider) {
       $locationProvider
       .html5Mode({
@@ -91,34 +91,12 @@ angular.module('myApp', ['ui.router','ctrlModule','ngAnimate'])
 
 
     
-    .run(function ($rootScope) {
-       $rootScope.$on('$stateChangeSuccess', function (event,toState,toParam,fromState,fromParams) {
-          $rootScope.currentState=toState.name
-        })
+.run(function ($rootScope) {
+   $rootScope.$on('$stateChangeSuccess', function (event,toState,toParam,fromState,fromParams) {
+      $rootScope.currentState=toState.name
     })
+})
 
-    .animation('.fade', function () {
-     return {
-        beforeAddClass : function(element, className, done) {
-          if (className === 'ng-show') {
-            element.animate({
-             opacity: 1
-            },500, done);
-          } else {
-          done();
-          }
-        },
-        removeClass : function(element, className, done) {
-          if (className === 'ng-show') {
-            element.css('opacity',0);
-            element.animate({
-             opacity: 0
-            }, 500, done);
-          } else {
-          done();
-          }
-         }
-     }
-    });
+
 
  
